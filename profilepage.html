@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <style>
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #000801;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #FFD700;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+
+    .nav-links a:hover {
+      color: #fff;
+      background: rgba(255, 215, 0, 0.1);
+    }
+
+    .nav-links a.profile {
+      border: 2px solid #FFD700;
+      padding: 0.5rem 1.5rem;
+    }
+
+    .nav-links a.profile:hover {
+      background: #FFD700;
+      color: #000801;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #FFD700;
+      background-image: url('smang\ bg.jpg');
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #000801;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      color: #FFD700;
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 2px solid #FFD700;
+    }
+
+    .profile-name {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+      color: #FFD700;
+    }
+
+    .profile-email {
+      font-size: 16px;
+      color: #FFD700;
+      margin: 5px 0 0;
+    }
+
+    .profile-section {
+      margin-bottom: 20px;
+    }
+
+    .profile-section h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: #FFD700;
+    }
+
+    .form-group {
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #FFD700;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      background: #1a1a1a;
+      border: 1px solid #FFD700;
+      border-radius: 4px;
+      color: #FFD700;
+    }
+
+    button {
+      background-color: #FFD700;
+      color: #000801;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: #b39700;
+    }
+
+    #booking-history li {
+      margin-bottom: 10px;
+      border-bottom: 1px solid #FFD700;
+      padding-bottom: 10px;
+      color: #FFD700;
+    }
+
+    .logout {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .logout button {
+      background-color: #dc3545;
+      color: #fff;
+    }
+
+    .logout button:hover {
+      background-color: #a71d2a;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#" class="logo">SMANG</a>
+    <div class="nav-links">
+      <a href="SMANG2.html">Home</a>
+      <a href="aboutus.html">About</a>
+      <a href="#">Services</a>
+      <a href="contactus.html">Contact</a>
+      <a href="profilepage.html" class="profile">Profile</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="profile-header">
+      <img src="tourism.jpg" alt="Profile Picture" class="profile-pic">
+      <h1 class="profile-name">Tamil</h1>
+      <p class="profile-email">tamilselvanp0507</p>
+    </header>
+
+    <section class="profile-section">
+      <h2>Personal Information</h2>
+      <form id="profile-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" value="Tamil">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" value="tamilselvanp0507@gmail.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" value="+91 88383 58477">
+        </div>
+        <button type="button" id="save-button">Save Changes</button>
+      </form>
+    </section>
+
+    <section class="profile-section">
+      <h2>Booking History</h2>
+      <ul id="booking-history">
+        <li>
+          <strong>Trip to Hyderabad</strong>
+          <p>Date: 2024-12-01</p>
+          <p>Bus: PSK Travels</p>
+        </li>
+        <li>
+          <strong>Trip to Tanjore</strong>
+          <p>Date: 2024-11-15</p>
+          <p>Bus: KPN Travels </p>
+        </li>
+      </ul>
+    </section>
+
+    <div class="logout">
+      <button id="logout-button">Logout</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('save-button').addEventListener('click', () => {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      alert(`Profile Updated:\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`);
+    });
+
+    document.getElementById('logout-button').addEventListener('click', () => {
+      alert('You have been logged out.');
+      window.location.href = '/login.html';
+    });
+  </script>
+</body>
+</html>
